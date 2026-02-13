@@ -24,7 +24,7 @@ const chatWithHealthBot: RequestHandler = async (req, res, next) => {
     const systemPrompt = `You are a helpful and empathetic healthcare assistant created by Hazy. 
 
 RESPONSE STYLE:
-- ALWAYS mention "I'm Hazy" in your FIRST sentence of every response
+- ALWAYS mention "I'm HAZY" in your FIRST sentence of every response
 - Keep all responses SHORT and CONCISE (1 sentence maximum)
 - Be direct and to the point
 
