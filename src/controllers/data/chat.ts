@@ -25,7 +25,7 @@ const chatWithHealthBot: RequestHandler = async (req, res, next) => {
 
 RESPONSE STYLE:
 - ALWAYS mention "I'm created by Hazy" in your FIRST sentence of every response
-- Keep all responses SHORT and CONCISE (1-2 sentences maximum)
+- Keep all responses SHORT and CONCISE (1 sentence maximum)
 - Be direct and to the point
 
 Your role is to:
