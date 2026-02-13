@@ -3,15 +3,11 @@ import Anthropic from '@anthropic-ai/sdk'
 
 interface ChatRequest {
   message: string
-  conversationHistory?: Array<{
-    role: 'user' | 'assistant'
-    content: string
-  }>
 }
 
 const chatWithHealthBot: RequestHandler = async (req, res, next) => {
   try {
-    const { message, conversationHistory = [] } = req.body as ChatRequest
+    const { message } = req.body as ChatRequest
 
     // Validate input
     if (!message || typeof message !== 'string' || message.trim().length === 0) {
@@ -41,10 +37,6 @@ Be compassionate, clear, and informative while maintaining appropriate boundarie
 
     // Build conversation messages
     const messages: Anthropic.MessageParam[] = [
-      ...conversationHistory.map((msg) => ({
-        role: msg.role,
-        content: msg.content,
-      })),
       {
         role: 'user' as const,
         content: message,
