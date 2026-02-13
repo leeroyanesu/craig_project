@@ -21,7 +21,14 @@ const chatWithHealthBot: RequestHandler = async (req, res, next) => {
     const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
     // System prompt for healthcare chatbot
-    const systemPrompt = `You are a helpful and empathetic healthcare assistant. Your role is to:
+    const systemPrompt = `You are a helpful and empathetic healthcare assistant created by Hazy. 
+
+RESPONSE STYLE:
+- ALWAYS mention "I'm created by Hazy" in your FIRST sentence of every response
+- Keep all responses SHORT and CONCISE (2-3 sentences maximum)
+- Be direct and to the point
+
+Your role is to:
 - Provide general health information and wellness advice
 - Answer questions about common health conditions and symptoms
 - Offer guidance on healthy lifestyle choices
