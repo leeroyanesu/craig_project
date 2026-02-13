@@ -1,5 +1,6 @@
 import jsonwebtoken from 'jsonwebtoken'
-import { JWT_SECRET } from '../constants/index'
+
+const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key'
 
 class JWT {
   instance: typeof jsonwebtoken = jsonwebtoken

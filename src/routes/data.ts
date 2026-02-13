@@ -1,13 +1,12 @@
 import express from 'express'
-import checkBearerToken from '../middlewares/check-bearer-token'
 import errorHandler from '../middlewares/error-handler'
-import getAllGames from '../controllers/data/stats'
+import chatWithHealthBot from '../controllers/data/chat'
 
 // initialize router
 const router = express.Router()
 
-// POST at path: http://localhost:8080/auth/login
-router.get('/stats', [checkBearerToken], getAllGames, errorHandler)
+// POST at path: http://localhost:8080/data/chat (no authentication required)
+router.post('/chat', chatWithHealthBot, errorHandler)
 
 
 export default router
